@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BUCKET=bucket
-REGION=us-east-1
+REGION=us-west-2
 ACCOUNT_ID=account
 STACK_NAME=TodoServerlessAPI
 
