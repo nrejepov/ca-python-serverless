@@ -15,9 +15,7 @@ Resources:
       Runtime: python3.12
       CodeUri: .
       Description: Get ToDo items
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName: TodoList
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
           TODO_TABLE: TodoList
@@ -35,9 +33,7 @@ Resources:
       Runtime: python3.12
       CodeUri: .
       Description: Create new ToDo item
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName: TodoList
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
           TODO_TABLE: TodoList
@@ -55,9 +51,7 @@ Resources:
       Runtime: python3.12
       CodeUri: .
       Description: Update ToDo item
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName: TodoList
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
           TODO_TABLE: TodoList
@@ -75,9 +69,7 @@ Resources:
       Runtime: python3.12
       CodeUri: .
       Description: Delete ToDo item
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName: TodoList
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
           TODO_TABLE: TodoList
