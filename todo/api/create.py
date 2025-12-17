@@ -49,7 +49,7 @@ def create(client, user_id, data, table_name, whitelist):
 
     whitelisted_data['userId'] = user_id
     whitelisted_data['todoId'] = str(uuid.uuid4())
-    whitelisted_data['created'] = str(datetime.datetime.utcnow())
+    whitelisted_data['created'] = str(datetime.datetime.now(datetime.UTC))
 
     # Some people like to create items they've already completed
     # It's a way to show what they've already accomplished.
