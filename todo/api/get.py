@@ -4,8 +4,8 @@ from .helper import respond, parse_username_from_claims
 
 def get_all(client, user_id, table_name):
     table = client.Table(table_name)
-    result = table.scan(
-        FilterExpression=boto3.dynamodb.conditions.Key('userId').eq(user_id)
+    result = table.query(
+        KeyConditionExpression=boto3.dynamodb.conditions.Key('userId').eq(user_id)
     )
     return result.get('Items', [])
 
@@ -34,7 +34,7 @@ def handler(event, context):
             if pp and 'id' in pp:
                 todo_id = pp['id']
 
-        # 3. Legacy Test Structure
+        # 3. Test Structure
         if not todo_id:
             try:
                 todo_id = event['params']['querystring']['id']
