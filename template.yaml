@@ -14,7 +14,7 @@ Resources:
       Handler: todo.api.get.handler
       Runtime: python3.12
       CodeUri: .
-      Description: Get ToDo items
+      Description: GET
       Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
@@ -32,7 +32,7 @@ Resources:
       Handler: todo.api.create.handler
       Runtime: python3.12
       CodeUri: .
-      Description: Create new ToDo item
+      Description: POST
       Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
@@ -50,7 +50,7 @@ Resources:
       Handler: todo.api.update.handler
       Runtime: python3.12
       CodeUri: .
-      Description: Update ToDo item
+      Description: PUT
       Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
@@ -68,7 +68,7 @@ Resources:
       Handler: todo.api.delete.handler
       Runtime: python3.12
       CodeUri: .
-      Description: Delete ToDo item
+      Description: DELETE
       Role: !Sub arn:aws:iam::${AWS::AccountId}:role/SamExecutionRole
       Environment:
         Variables:
